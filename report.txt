@@ -1,0 +1,40 @@
+Hamming coding algorithm implementation
+----------------------------------------
+Original message : 011001011
+
+Hamming parameters
+--------------------
+Original message length n=9
+Parity-check matrix length r=4
+Encoded message length l=13
+--------------------
+
+XX0X110X01011   S
+X_X_X_X_X_X_X   2
+_XX__XX__XX__   2
+___XXXX____XX   4
+_______XXXXXX   3
+--------------------
+0000110101011
+
+----------------------------------------
+Recieved message : 0000010101011
+
+Hamming parameters
+--------------------
+Original message length n=9
+Parity-check matrix length r=4
+Encoded message length l=13
+--------------------
+
+0000010101011   S
+X_X_X_X_X_X_X   1
+_XX__XX__XX__   2
+___XXXX____XX   3
+_______XXXXXX   4
+The resulting error code is 0101
+
+The recieved message 0000010101011 contains error 
+in position number 5
+The corrected Message is 0000110101011
+
