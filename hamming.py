@@ -9,11 +9,11 @@ def logtofile(filename,message):
     f=open(filename,'a')
     f.write(message+'\n')
     f.close()
-
 def binstrTOarray(str):
     return [int(c) for c in str]
 def arrayTobinstr(arr):
-    return ''.join(str(e) for e in arr)
+    ret=''.join(str(e) for e in arr)
+    return ret.replace('2','X')
 def getHammingParameters(message,type):
     if type=='encode':
 	n=len(message)
@@ -39,11 +39,6 @@ def getMap(n,r):
         map=(['_']*p+['X']*p)*repeat
         maps.append(map[1:l+1])
     return maps
-def binstrTOarray(str):
-    return [int(c) for c in str]
-def arrayTobinstr(arr):
-    ret=''.join(str(e) for e in arr)
-    return ret.replace('2','X')
 def hamming_code(message):
     n,r,l=getHammingParameters(message,'encode')
     maps=getMap(n,r)
